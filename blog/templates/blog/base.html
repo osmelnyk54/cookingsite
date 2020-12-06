@@ -1,32 +1,73 @@
 {% load static %}
 <html>
     <head>
-        <title>Django Girls blog</title>
+        <title>Кулінарні Рецепти Українською</title>
+
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
         <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="{% static 'css/blog.css' %}">
     </head>
     <body>
-    <div class="page-header">
-        <h1><a href="/">Django Girls Blog</a></h1>
-    </div>
-    <div class="content container">
-        <div class="row">
-            <div class="col-md-8">
-            {% block content %}
-                {% for post in posts %}
-        <div class="post">
-            <div class="date">
-                {{ post.published_date }}
+        <div class="page-header">
+
+            {% if user.is_authenticated %}
+                <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+            {% endif %}
+            <div class="logo">
+                <img src="http://patelnya.com.ua/wp-content/themes/patelnya_new/img/logo-patelnya.svg">
             </div>
-            <h1><a href="">{{ post.title }}</a></h1>
-            <p>{{ post.text|linebreaksbr }}</p>
-        </div>
-    {% endfor %}
-            {% endblock %}
+            <h1><a href="/">Кулінарні рецепти українською</a></h1>
+            <div class="topnav">
+                <a class="active" href="#">Головна</a>
+                <a href="recepts.html">Рецепти на щодень</a>
+                <a href="#">Святкові рецепти</a>
+                <a href="#">Рецепти для здоров'я</a>
+                <a href="#">Кулінарні поради</a>
+                <a href="#">Готуємо з технікою</a>
+                <a href="#">Тематичні рецепти</a>
             </div>
         </div>
-    </div>
-</body>
+         
+        <div id="captioned-gallery">
+            <figure class="slider">
+                <figure>
+                    <img src="http://patelnya.com.ua/wp-content/uploads/2015/01/img-bg-1.jpg" alt>
+                </figure>
+                <figure>
+                    <img src="http://patelnya.com.ua/wp-content/uploads/2015/01/img-bg-3.jpg" alt>
+                </figure>
+                <figure>
+                    <img src="http://patelnya.com.ua/wp-content/uploads/2015/01/img-bg-2.jpg" alt>
+                </figure>
+            </figure>
+        </div>
+            <div class="new_recepts">
+                <h3>Нові Рецепти</h3>
+                <img src="http://patelnya.com.ua/wp-content/themes/patelnya_new/img/title-icon.svg">
+                <p>Тут ви знайдете цікаві ідеї для оздоблення страв,</br>
+                 які прикрасять ваш святковий та повсякденний стіл, </br>а також безліч рецептів,</br> які надихнуть вас на створення своїх,</br> авторських страв!)</p>
+            </div>
+        <div class="content container">
+            <div class="row">
+                <div class="col-md-12">
+                    <hr>
+                {% block content %}
+                {% endblock %}
+                    <hr>
+                </div>
+            </div>
+
+        </div>
+        <div class="top_recepts">
+            <h1>Топ рецептів</h1>
+                <a href="http://127.0.0.1:8001/post/9/">Персиковий джем з ревенем та коньяком</a></br>
+                <a href="http://127.0.0.1:8001/post/13/">Торт з морозива</a></br>
+                <a href="http://127.0.0.1:8001/post/15/">Святковий салат “Тростина”</a></br>
+                <a href="http://127.0.0.1:8001/post/15/">Компот з аґрусу “Мохіто”</a></br>
+        </div>
+        <div class="footer">
+            <p>All rights reserved © Oksana Melnyk & Maria Metsan</p>
+        </div>
+    </body>
 </html>

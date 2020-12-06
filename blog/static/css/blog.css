@@ -1,28 +1,29 @@
 h1 a {
-    color: #FCA205;
-}
-body {
-    padding-left: 15px;
-}
-h1 a {
-    color: #FCA205;
+
     font-family: 'Lobster';
+
+}
+
+body {
+ /*   padding-left: 10px;*/
+    background-color: #dbedb0;
 }
 
 .page-header {
-    background-color: #ff9400;
+    background-color: #8cb724;
     margin-top: 0;
     padding: 20px 20px 20px 40px;
 }
 
 .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
-    color: #ffffff;
+    color: #333333;
     font-size: 36pt;
     text-decoration: none;
+    text-align: center;
 }
 
 .content {
-    margin-left: 40px;
+    width: 100%;
 }
 
 h1, h2, h3, h4 {
@@ -31,7 +32,7 @@ h1, h2, h3, h4 {
 
 .date {
     float: right;
-    color: #828282;
+    color: #878a8c;
 }
 
 .save {
@@ -43,7 +44,7 @@ h1, h2, h3, h4 {
 }
 
 .top-menu, .top-menu:hover, .top-menu:visited {
-    color: #ffffff;
+    color: #3d3d3d;
     float: right;
     font-size: 26pt;
     margin-right: 20px;
@@ -51,8 +52,178 @@ h1, h2, h3, h4 {
 
 .post {
     margin-bottom: 70px;
+
 }
 
 .post h1 a, .post h1 a:visited {
-    color: #000000;
+    color: #3d3d3d;
+
+}
+
+.post p{
+    text-align: justify;
+    font-size: 20px;
+}
+                                                                                /*footer  */
+
+.footer{
+    width: 100%;
+    background-color: #8cb724;
+    height: 50px;
+
+
+}
+.footer p{
+    text-align: center;
+    color: #f7a50e
+    font-size: 15px;
+    padding-top: 10px;
+    padding-right: 20px;
+    font-size: 17px;
+    font-family: 'montserrat';
+
+}
+
+                                                                                /* Add a black background color to the top navigation   */
+.topnav {
+  background-color: #8cb724;
+  overflow: hidden;
+  font-family: 'montserrat';
+}
+
+                                                                                    /* Style the links inside the navigation bar  */
+.topnav a {
+  float: left;
+  color: #333333;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  
+  font-weight: bold;
+  font-size: 20px;
+}
+
+                                                                                /* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #dbedb0;
+  color: #3d3d3d;
+}
+
+                                                                            /* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #557015;
+  color: white;
+}
+                                                                                    /*logo*/
+.logo  {
+    float: left;
+    padding: 9px 0px;
+    
+
+
+}
+
+.logo img { 
+ width: 220px; 
+ height: 64px; 
+ object-fit: cover; 
+}
+                                                                                        /*Slider*/
+@import url(https://fonts.googleapis.com/css?family=Istok+Web);
+@keyframes slidy {
+0% { left: 0%; }
+20% { left: 0%; }
+25% { left: -100%; }
+45% { left: -100%; }
+50% { left: -200%; }
+70% { left: -200%; }
+75% { left: -300%; }
+95% { left: -300%; }
+100% { left: -400%; }
+}
+
+* {
+  box-sizing: border-box;
+}
+figure { 
+  margin: 0; 
+  background-image: url('http://patelnya.com.ua/wp-content/uploads/2015/01/img-bg-1.jpg');
+  font-family: Istok Web, sans-serif;
+  font-weight: 100;
+}
+
+div#captioned-gallery { 
+  width: 100%; overflow: hidden; 
+}
+
+figure.slider { 
+  position: relative; width: 500%;
+  font-size: 0; 
+  animation: 20s slidy infinite; 
+}
+
+figure.slider figure { 
+  width: 20%; 
+  height: auto;
+  display: inline-block;  
+  position: inherit; 
+}
+
+figure.slider img { width: 100%; height: auto; }
+figure.slider figure figcaption { 
+  position: absolute; bottom: 0;
+  background: rgba(0,0,0,0.4);
+  color: #fff; width: 100%;
+  font-size: 2rem; padding: .6rem; 
+}
+
+#captioned-gallery {
+    margin-top: -20px;
+}
+.col-md-12{
+    background-color: #dbedb0;
+}
+                                                                                    /*new recepts*/
+.new_recepts{
+    text-align: center;
+    width: 100%;
+    background-color: #dbedb0;
+    margin-top: -20px; 
+
+}
+.new_recepts h3{
+    padding: 20px; 
+    text-align: center;
+    font-size: 50px;
+}
+.new_recepts p{
+    margin-top: 20px;
+    text-align: center;
+    font-size: 25px;
+    font-style: italic;
+}
+.new_recepts img{
+    height: 75px;
+}
+                                                                                /*top_recepts*/
+.top_recepts{
+    width: 100%;
+    text-align: center;
+}
+.top_recepts h1{
+    width: 100%;
+    text-align: center;
+}
+.top_recepts a{
+    
+    font-family: 'Lobster';
+    color: #8cb724;
+    font-size: 30px;
+}
+
+hr {
+    border: none; 
+    background-color: #8cb724; /* Цвет линии */
+    color: #8cb724; /* Цвет линии для IE6-7 */
+    height: 2px; /* Толщина линии */
 }
