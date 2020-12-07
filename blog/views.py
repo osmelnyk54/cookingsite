@@ -5,16 +5,39 @@ from django.shortcuts import render, get_object_or_404
 from .forms import PostForm
 from django.shortcuts import redirect
 
-def post_list(request):
-    posts = Post.objects.filter(published_date__lte=timezone.now(), recept_day=False).order_by('published_date')
+def post_list_main(request):
+    posts = Post.objects.filter(published_date__lte=timezone.now(), is_main=True).order_by('published_date')
     return render(request, 'blog/post_list.html', {'posts': posts})
+
+def post_list_day(request):
+    posts = Post.objects.filter(published_date__lte=timezone.now(), is_day=True).order_by('published_date')
+    return render(request, 'blog/post_list.html', {'posts': posts})
+
+def post_list_holiday(request):
+    posts = Post.objects.filter(published_date__lte=timezone.now(), is_holiday=True).order_by('published_date')
+    return render(request, 'blog/post_list.html', {'posts': posts})
+
+def post_list_health(request):
+    posts = Post.objects.filter(published_date__lte=timezone.now(), is_health=True).order_by('published_date')
+    return render(request, 'blog/post_list.html', {'posts': posts})
+
+def post_list_modelss(request):
+    posts = Post.objects.filter(published_date__lte=timezone.now(), is_modelss=True).order_by('published_date')
+    return render(request, 'blog/post_list.html', {'posts': posts})
+
+def post_list_equipment(request):
+    posts = Post.objects.filter(published_date__lte=timezone.now(), is_equipment=True).order_by('published_date')
+    return render(request, 'blog/post_list.html', {'posts': posts})
+
+def post_list_thematic(request):
+    posts = Post.objects.filter(published_date__lte=timezone.now(), is_thematic=True).order_by('published_date')
+    return render(request, 'blog/post_list.html', {'posts': posts})
+
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
     return render(request, 'blog/post_detail.html', {'post': post})
 
-def post_list_recept_day(request):
-    posts = Post.objects.filter(published_date__lte=timezone.now(), recept_day=True).order_by('published_date')
-    return render(request, 'blog/post_list.html', {'posts': posts})
+
 
 def post_new(request):
     if request.method == "POST":
