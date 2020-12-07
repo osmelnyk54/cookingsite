@@ -10,7 +10,6 @@ class Post(models.Model):
             default=timezone.now)
     published_date = models.DateTimeField(
             blank=True, null=True)
-    recept_day = models.BooleanField(default=False)
     is_main = models.BooleanField(default=False)
     is_day = models.BooleanField(default=False)
     is_holiday = models.BooleanField(default=False)
