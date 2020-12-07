@@ -11,6 +11,13 @@ class Post(models.Model):
     published_date = models.DateTimeField(
             blank=True, null=True)
     recept_day = models.BooleanField(default=False)
+    is_main = models.BooleanField(default=False)
+    is_day = models.BooleanField(default=False)
+    is_holiday = models.BooleanField(default=False)
+    is_health = models.BooleanField(default=False)
+    is_modelss = models.BooleanField(default=False)
+    is_equipment = models.BooleanField(default=False)
+    is_thematic = models.BooleanField(default=False)
 
     def publish(self):
         self.published_date = timezone.now()
